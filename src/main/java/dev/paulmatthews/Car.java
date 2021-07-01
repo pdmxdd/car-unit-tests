@@ -79,4 +79,11 @@ public class Car {
         this.odometer += milesAbleToTravel;
     }
 
+    public void addGas(double amount) {
+        if(this.gasTankLevel + amount > this.gasTankSize) {
+            throw new IllegalArgumentException("Cannot exceed gas tank level");
+        }
+        this.gasTankLevel += amount;
+    }
+
 }
