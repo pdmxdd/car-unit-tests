@@ -21,8 +21,17 @@ public class CarTests {
     }
 
     // EXERCISE TODO: gasTankLevel is accurate after driving within tank range
-
+    @Test
+    @DisplayName("gasTank is accurate after driving")
+    public void testTankAfterDriving() {
+        // Arrange
+        Car testCar = new Car("Toyota", "Prius", 10, 50);
+        // Action
+        testCar.drive(100);
+        // Assert
+        assertEquals(8, testCar.getGasTankLevel(), .001);
+    }
     // EXERCISE TODO: gasTankLevel is accurate after attempting to drive past tank range
-
+    
     // EXERCISE TODO: Exception thrown when gas tank is overfilled
 }
